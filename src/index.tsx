@@ -1,11 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-
-const App = () => <h1>에이블리 과제</h1>;
+import Router from "~/router";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router />
   </React.StrictMode>,
   document.getElementById("root"),
 );
