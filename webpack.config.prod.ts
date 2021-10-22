@@ -30,6 +30,9 @@ const config: Configuration = {
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
+    alias: {
+      "@mui/styled-engine": "@mui/styled-engine-sc",
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
