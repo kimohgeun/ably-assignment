@@ -6,9 +6,11 @@ import {
   AnyAction,
 } from "@reduxjs/toolkit";
 import resetPasswordSlice from "~/store/resetPasswordSlice";
+import toastSlice from "~/store/toastSlice";
 
 const combinedReducer = combineReducers({
   resetPassword: resetPasswordSlice,
+  toast: toastSlice,
 });
 
 const reducer: Reducer = (state: RootState, action: AnyAction) => {
