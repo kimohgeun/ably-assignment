@@ -1,3 +1,4 @@
 import useResetPassword from "~/hooks/store/useResetPassword";
+import useToast from "~/hooks/store/useToast";
 
-export { useResetPassword };
+export { useResetPassword, useToast };
