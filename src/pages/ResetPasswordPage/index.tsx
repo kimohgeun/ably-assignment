@@ -1,7 +1,12 @@
 import React from "react";
+import ResetPasswordStepper from "~/pages/ResetPasswordPage/ResetPasswordStepper";
 
 function ResetPasswordPage() {
-  return <div>비밀번호 재설정 페이지</div>;
+  return (
+    <>
+      <ResetPasswordStepper />
+    </>
+  );
 }
 
 export default ResetPasswordPage;
