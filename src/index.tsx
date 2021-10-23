@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import store from "~/store";
 import { QueryClientProvider, QueryClient } from "react-query";
 import { GlobalStyle } from "~/styles";
+import Toast from "~/components/Toast";
 import Router from "~/router";
 
 const queryClient = new QueryClient({
@@ -19,6 +20,7 @@ ReactDOM.render(
     <Provider store={store}>
       <QueryClientProvider client={queryClient}>
         <GlobalStyle />
+        <Toast />
         <Router />
       </QueryClientProvider>
     </Provider>
