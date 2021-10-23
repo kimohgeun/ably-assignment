@@ -1,7 +1,7 @@
 import React, { Suspense, useEffect } from "react";
 import { useUser } from "~/hooks/store";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-import { LoginPage, ResetPasswordPage } from "~/pages";
+import { UserPage, LoginPage, ResetPasswordPage } from "~/pages";
 
 function Router() {
   const { token: storeToken, setToken } = useUser();
@@ -18,7 +18,7 @@ function Router() {
         <Switch>
           {storeToken ? (
             <>
-              <Route path="/user" component={() => <div>유저</div>} />
+              <Route path="/user" component={UserPage} />
               <Redirect path="*" to="/user" />
             </>
           ) : (
