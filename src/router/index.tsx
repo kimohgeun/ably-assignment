@@ -14,7 +14,7 @@ function Router() {
 
   if (localStorageToken && !storeToken) return null;
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/ably-assignment">
       <Suspense fallback={<LinearProgress />}>
         <Switch>
           {storeToken ? (
