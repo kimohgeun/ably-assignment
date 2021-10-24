@@ -1,7 +1,8 @@
 import React from "react";
+import UserCard from "~/pages/UserPage/UserCard";
 
 function UserPage() {
-  return <div>유저 페이지</div>;
+  return <UserCard />;
 }
 
 export default UserPage;
