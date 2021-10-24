@@ -9,6 +9,7 @@ import {
   CardActions,
   Typography,
   Button,
+  CircularProgress,
 } from "@mui/material";
 
 function UserCard() {
@@ -47,7 +48,13 @@ function UserCard() {
             </Typography>
           </CardContent>
           <CardActions>
-            <Button onClick={handleLogout}>로그아웃</Button>
+            <Button onClick={handleLogout} disabled={logoutQuery.isLoading}>
+              {logoutQuery.isLoading ? (
+                <CircularProgress size="1rem" />
+              ) : (
+                "로그아웃"
+              )}
+            </Button>
           </CardActions>
         </>
       )}
