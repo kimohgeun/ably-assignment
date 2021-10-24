@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import moment, { isDate } from "moment";
+import moment from "moment";
 import styled from "styled-components";
 import { validateEmail } from "~/utils";
 import { Link } from "react-router-dom";
