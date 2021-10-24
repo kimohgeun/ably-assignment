@@ -1,6 +1,7 @@
 import React, { Suspense, useEffect } from "react";
 import { useUser } from "~/hooks/store";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { LinearProgress } from "@mui/material";
 import { UserPage, LoginPage, ResetPasswordPage } from "~/pages";
 
 function Router() {
@@ -14,7 +15,7 @@ function Router() {
   if (localStorageToken && !storeToken) return null;
   return (
     <BrowserRouter>
-      <Suspense fallback="로딩중...">
+      <Suspense fallback={<LinearProgress />}>
         <Switch>
           {storeToken ? (
             <>
