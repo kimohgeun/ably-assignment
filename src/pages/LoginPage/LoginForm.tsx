@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import moment, { isDate } from "moment";
 import styled from "styled-components";
 import { validateEmail } from "~/utils";
 import { Link } from "react-router-dom";
@@ -11,6 +12,11 @@ import { Typography, TextField, Button, CircularProgress } from "@mui/material";
 function LoginForm() {
   const { openToast } = useToast();
   const { setToken } = useUser();
+
+  const localStorageLastConnectedAt = localStorage.getItem("LAST_CONNECTED_AT");
+  const lastConnectedAt = localStorageLastConnectedAt
+    ? new Date(parseInt(localStorageLastConnectedAt))
+    : "";
 
   const [formData, setFormData] = useState({
     email: "",
@@ -54,6 +60,11 @@ function LoginForm() {
       <Typography variant="h3" component="h1">
         A B L Y
       </Typography>
+      {moment(lastConnectedAt, "YYYY-MM-DD").isValid() && (
+        <Typography>
+          {`마지막 접속 일자 : ${moment(lastConnectedAt).format("YYYY-MM-DD")}`}
+        </Typography>
+      )}
       <TextField
         fullWidth
         placeholder="이메일"
